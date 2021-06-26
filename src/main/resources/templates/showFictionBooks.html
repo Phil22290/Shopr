@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"> <!-- import thymeleaf -->
+<head th:replace="fragments/fragments :: head">
+
+</head>
+<body>
+
+<div class="container my-2">
+  <h1>Book list</h1>
+
+<!--  <a th:href="@{/showAllBooks}" class="btn btn-primary btn-sm mb-3"> Add Employee </a>-->
+
+  <!-- FICTION BOOKS -->
+  <table class="table table-dark">
+    <thead>
+    <tr>
+      <th data-field="article_id">Article ID</th>
+      <th data-field="price">Price</th>
+      <th data-field="supplier_id">Supplier ID</th>
+      <th data-field="title">Title</th>
+      <th data-field="type">Type</th>
+<!--      <th data-field="author">Author</th>-->
+<!--      <th data-field="isbn">ISBN</th>-->
+<!--      <th data-field="pages">Pages</th>-->
+      <th data-field="book_genre">Genre</th>
+      <th data-field="description">Description</th>
+<!--      <th data-field="book_subject">Subject</th>-->
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="bookfiction : ${showFictionBooks}">
+      <td th:text="${bookfiction.getArticleId()}"></td>
+      <td th:text="${bookfiction.getPrice()}"></td>
+      <td th:text="${bookfiction.getSupplierId()}"></td>
+      <td th:text="${bookfiction.getTitle()}"></td>
+      <td th:text="${bookfiction.getType()}"></td>
+      <td th:text="${bookfiction.getBookGenre()}"></td>
+      <td th:text="${bookfiction.getDescription()}"></td>
+
+
+
+<!--      <td> <a th:href="@{/showFormForUpdate/{id}(id=${employee.id})}" class="btn btn-primary">Update</a>-->
+<!--        <a th:href="@{/deleteEmployee/{id}(id=${employee.id})}" class="btn btn-danger">Delete</a>-->
+    </tr>
+    </tbody>
+  </table>
+
+
+<!--  <table border="1" class="table table-striped table-responsive-md">-->
+<!--    <thead>-->
+<!--    <tr>-->
+<!--      <th data-field="type">Book Type</th>-->
+<!--      <th data-field="article_id">Article ID</th>-->
+<!--      <th data-field="price">Price</th>-->
+<!--      <th data-field="supplier_id">Supplier ID</th>-->
+<!--      <th data-field="title">Title</th>-->
+<!--      <th data-field="author">Author</th>-->
+<!--      <th data-field="isbn">ISBN</th>-->
+<!--      <th data-field="pages">Pages</th>-->
+<!--      <th data-field="book_genre">Genre</th>-->
+<!--      <th data-field="description">Description</th>-->
+<!--      <th data-field="book_subject">Subject</th>-->
+
+<!--    </tr>-->
+<!--    </thead>-->
+<!--    <tbody>-->
+<!--    <tr th:each="book : ${showAllBooks}">-->
+<!--      <td th:text="${book.getType()}"></td>-->
+<!--      <td th:text="${book.getArticleId()}"></td>-->
+<!--      <td th:text="${book.getPrice()}"></td>-->
+<!--      <td th:text="${book.getSupplierId()}"></td>-->
+<!--      <td th:text="${book.getTitle()}"></td>-->
+<!--      <td th:text="${book.getAuthor()}"></td>-->
+<!--      <td th:text="${book.getIsbn()}"></td>-->
+<!--      <td th:text="${book.getPages()}"></td>-->
+<!--      <td th:if="${book instanceof BookFiction()}" th:text=""></td>-->
+
+<!--      <td th:text="${(Fiction)book.getBookGenre}"></td>-->
+<!--      <td th:text="${book.getDescription}"></td>-->
+<!--      <td th:text="${((BookFiction)book).getBookSubject}"></td>-->
+
+<!--      &lt;!&ndash;      <td> <a th:href="@{/showFormForUpdate/{id}(id=${employee.id})}" class="btn btn-primary">Update</a>&ndash;&gt;-->
+<!--      &lt;!&ndash;        <a th:href="@{/deleteEmployee/{id}(id=${employee.id})}" class="btn btn-danger">Delete</a>&ndash;&gt;-->
+<!--      </td>-->
+<!--    </tr>-->
+<!--    </tbody>-->
+<!--  </table>-->
+
+</div>
+
+
+</body>
+</html>
